@@ -20,5 +20,8 @@ public class Program {
         System.out.println("---- TEST 2: findByDepartment ----");
         sellerDao.findByDepartment(seller.getDepartment()).forEach(System.out::println);
 
+        System.out.println();
+        System.out.println("---- TEST 3: findAll ----");
+        sellerDao.findALl().forEach(System.out::println);
     }
 }
