@@ -48,5 +48,11 @@ public class Program {
         sellerDao.update(seller);
         sellerDao.findALl().stream().filter(x -> Objects.equals(x.getName(),"Jonathan Sampaio Samp")).forEach(System.out::println);
 
+        System.out.println();
+        System.out.println("---- TEST 5: deleteById----");
+        sellerDao.deleteById(20);
+        System.out.println("Delete successful");
+        sellerDao.findALl().forEach(System.out::println);
+
     }
 }
