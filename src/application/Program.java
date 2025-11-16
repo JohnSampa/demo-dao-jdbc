@@ -39,5 +39,14 @@ public class Program {
         ));
         System.out.println("Inserted!");
         sellerDao.findALl().stream().filter(x -> Objects.equals(x.getName(), "Jonathan Sampaio")).forEach(System.out::println);
+
+        System.out.println();
+        System.out.println("---- TEST 5: update ----");
+        seller = sellerDao.findById(19);
+        seller.setName("Jonathan Sampaio Samp");
+        seller.setBaseSalary(50000.00);
+        sellerDao.update(seller);
+        sellerDao.findALl().stream().filter(x -> Objects.equals(x.getName(),"Jonathan Sampaio Samp")).forEach(System.out::println);
+
     }
 }
