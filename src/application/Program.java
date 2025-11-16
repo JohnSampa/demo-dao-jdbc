@@ -4,6 +4,9 @@ import model.dao.DaoFactory;
 import model.dao.SellerDao;
 import model.entities.Seller;
 
+import java.util.Date;
+import java.util.Objects;
+
 
 public class Program {
     public static void main(String[] args) {
@@ -23,5 +26,18 @@ public class Program {
         System.out.println();
         System.out.println("---- TEST 3: findAll ----");
         sellerDao.findALl().forEach(System.out::println);
+
+        System.out.println();
+        System.out.println("---- TEST 4: insert ----");
+        sellerDao.insert(new Seller(
+                null,
+                "Jonathan Sampaio",
+                "aurijona@email.com",
+                new Date(),
+                30000.00,
+                seller.getDepartment()
+        ));
+        System.out.println("Inserted!");
+        sellerDao.findALl().stream().filter(x -> Objects.equals(x.getName(), "Jonathan Sampaio")).forEach(System.out::println);
     }
 }
